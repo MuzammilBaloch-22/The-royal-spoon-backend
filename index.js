@@ -13,8 +13,9 @@ app.use(cors());
 const PORT = process.env.PORT || 8080;
 
 // ====== Google Sheets Setup ======
+
 const auth = new GoogleAuth({
-  keyFile: "credentials.json",
+  credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
